@@ -1,0 +1,101 @@
+student_id,gender,age,grade,ethnicity,math_score,english_score,science_score,history_score
+1,Male,15,10,African American,85.0,78.0,82.0,88.0
+2,Female,16,11,Asian,90.0,85.0,88.0,92.0
+3,Male,15,10,Hispanic,75.0,80.0,78.0,76.0
+4,Female,16,11,Caucasian,92.0,88.0,90.0,94.0
+5,Female,17,12,Asian,88.0,,85.0,89.0
+6,Male,16,11,Caucasian,80.0,75.0,78.0,82.0
+7,Male,15,10,Hispanic,70.0,72.0,68.0,74.0
+8,Female,17,12,African American,78.0,82.0,,76.0
+9,Female,16,11,Asian,95.0,92.0,94.0,90.0
+10,Male,15,10,Caucasian,,88.0,82.0,86.0
+11,Male,17,12,African American,76.0,80.0,74.0,78.0
+12,Female,16,11,Hispanic,82.0,78.0,80.0,84.0
+13,Male,15,10,Asian,88.0,90.0,85.0,89.0
+14,Male,16,11,Caucasian,80.0,75.0,78.0,82.0
+15,Female,15,10,Hispanic,72.0,74.0,70.0,68.0
+16,Female,17,12,African American,85.0,82.0,88.0,84.0
+17,Male,15,10,Asian,90.0,85.0,88.0,
+18,Female,16,11,Caucasian,92.0,88.0,90.0,94.0
+19,Female,17,12,Hispanic,88.0,90.0,85.0,89.0
+20,Male,16,11,African American,34.0,82.0,80.0,76.0
+21,Male,15,10,Asian,95.0,92.0,94.0,90.0
+22,Female,17,12,Caucasian,85.0,,82.0,86.0
+23,Male,16,11,Hispanic,76.0,80.0,74.0,78.0
+24,Female,15,10,African American,82.0,78.0,80.0,84.0
+25,Male,17,12,Asian,,90.0,85.0,89.0
+26,Female,16,11,Caucasian,80.0,75.0,78.0,82.0
+27,Male,15,10,Hispanic,72.0,74.0,70.0,68.0
+28,Female,17,12,African American,85.0,82.0,,84.0
+29,Male,15,10,Asian,90.0,85.0,88.0,92.0
+30,Female,16,11,Caucasian,92.0,88.0,90.0,94.0
+31,Female,17,12,Hispanic,88.0,90.0,85.0,89.0
+32,Male,16,11,African American,78.0,82.0,80.0,76.0
+33,Male,15,10,Asian,95.0,92.0,94.0,90.0
+34,Female,17,12,Caucasian,85.0,88.0,82.0,86.0
+35,Male,16,11,Hispanic,76.0,80.0,74.0,78.0
+36,Female,15,10,African American,82.0,78.0,80.0,84.0
+37,Male,17,12,Asian,88.0,90.0,85.0,89.0
+38,Female,16,11,Caucasian,80.0,75.0,78.0,82.0
+39,Male,15,10,Hispanic,72.0,74.0,70.0,68.0
+40,Female,17,12,African American,85.0,82.0,88.0,84.0
+41,Male,15,10,Asian,90.0,85.0,88.0,92.0
+42,Female,16,11,Caucasian,92.0,88.0,90.0,94.0
+43,Female,17,12,Hispanic,88.0,,,89.0
+44,Male,16,11,African American,78.0,82.0,80.0,76.0
+45,Male,15,10,Asian,95.0,92.0,94.0,90.0
+46,Female,17,12,Caucasian,85.0,88.0,82.0,86.0
+47,Male,16,11,Hispanic,76.0,80.0,74.0,78.0
+48,Female,15,10,African American,82.0,78.0,80.0,84.0
+49,Male,17,12,Asian,88.0,90.0,85.0,89.0
+50,Female,16,11,Caucasian,80.0,75.0,78.0,82.0
+51,Male,15,10,Hispanic,,74.0,70.0,68.0
+52,Female,17,12,African American,85.0,82.0,88.0,84.0
+53,Male,15,10,Asian,90.0,85.0,,92.0
+54,Female,16,11,Caucasian,92.0,88.0,90.0,94.0
+55,Female,17,12,Hispanic,88.0,90.0,85.0,89.0
+56,Male,16,11,African American,78.0,82.0,80.0,76.0
+57,Male,15,10,Asian,95.0,,94.0,90.0
+58,Female,17,12,Caucasian,85.0,88.0,82.0,86.0
+59,Male,16,11,Hispanic,76.0,80.0,74.0,78.0
+60,Female,15,10,African American,82.0,78.0,80.0,84.0
+61,Male,15,10,Caucasian,85.0,79.0,83.0,88.0
+62,Female,16,11,Asian,91.0,86.0,89.0,93.0
+63,Male,15,10,Hispanic,76.0,81.0,79.0,77.0
+64,Female,16,11,Caucasian,37.0,89.0,91.0,95.0
+65,Female,17,12,Asian,89.0,91.0,86.0,90.0
+66,Male,16,11,Caucasian,81.0,76.0,79.0,
+67,Male,15,10,Hispanic,71.0,73.0,69.0,75.0
+68,Female,17,12,African American,79.0,83.0,81.0,77.0
+69,Female,16,11,Asian,96.0,,,91.0
+70,Male,15,10,Caucasian,,89.0,83.0,87.0
+71,Male,17,12,African American,77.0,81.0,75.0,79.0
+72,Female,16,11,Hispanic,83.0,79.0,81.0,85.0
+73,Male,15,10,Asian,89.0,91.0,86.0,90.0
+74,Male,16,11,Caucasian,81.0,76.0,79.0,83.0
+75,Female,15,10,Hispanic,73.0,75.0,71.0,69.0
+76,Female,17,12,African American,86.0,83.0,89.0,85.0
+77,Male,15,10,Asian,91.0,86.0,89.0,93.0
+78,Female,16,11,Caucasian,93.0,89.0,91.0,95.0
+79,Female,17,12,Hispanic,89.0,91.0,86.0,90.0
+80,Male,16,11,African American,79.0,83.0,81.0,77.0
+81,Male,15,10,Asian,96.0,93.0,95.0,91.0
+82,Female,17,12,Caucasian,86.0,89.0,,87.0
+83,Male,16,11,Hispanic,77.0,81.0,75.0,79.0
+84,Female,15,10,African American,83.0,79.0,81.0,85.0
+85,Male,17,12,Asian,89.0,,86.0,90.0
+86,Female,16,11,Caucasian,81.0,76.0,79.0,83.0
+87,Male,15,10,Hispanic,73.0,75.0,71.0,69.0
+88,Female,17,12,African American,86.0,83.0,89.0,85.0
+89,Male,15,10,Asian,,86.0,89.0,93.0
+90,Female,16,11,Caucasian,93.0,89.0,91.0,95.0
+91,Female,17,12,Hispanic,89.0,91.0,,90.0
+92,Male,16,11,African American,79.0,83.0,81.0,77.0
+93,Male,15,10,Asian,96.0,93.0,95.0,91.0
+94,Female,17,12,Caucasian,86.0,89.0,83.0,87.0
+95,Male,16,11,Hispanic,,81.0,75.0,79.0
+96,Female,15,10,African American,83.0,79.0,81.0,85.0
+97,Male,17,12,Asian,89.0,91.0,86.0,
+98,Female,16,11,Caucasian,81.0,76.0,79.0,83.0
+99,Male,15,10,Hispanic,73.0,,71.0,69.0
+100,Female,17,12,African American,86.0,83.0,89.0,85.0

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Data Analyzer - B.Tech Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1><i class="fas fa-chart-line"></i> CSV Data Analyzer</h1>
+                <p class="subtitle">Advanced Data Analysis & Machine Learning Platform</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container main-container">
+        
+        <!-- Upload Section -->
+        <div class="upload-card" id="uploadSection">
+            <div class="upload-icon">
+                <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <h2>Upload Your CSV File</h2>
+            <p>Drag and drop or click to select a CSV file (Max 50MB)</p>
+            <input type="file" id="fileInput" accept=".csv" style="display: none;">
+            <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+                <i class="fas fa-file-csv"></i> Choose File
+            </button>
+            <div id="uploadStatus" class="upload-status"></div>
+        </div>
+
+        <!-- Main Content (Hidden until file uploaded) -->
+        <div id="mainContent" style="display: none;">
+            
+            <!-- Navigation Tabs -->
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="showTab('overview')">
+                    <i class="fas fa-info-circle"></i> Overview
+                </button>
+                <button class="tab-btn" onclick="showTab('clean')">
+                    <i class="fas fa-broom"></i> Data Cleaning
+                </button>
+                <button class="tab-btn" onclick="showTab('analysis')">
+                    <i class="fas fa-chart-bar"></i> Analysis
+                </button>
+                <button class="tab-btn" onclick="showTab('visuals')">
+                    <i class="fas fa-chart-pie"></i> Visualizations
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-content active">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-database"></i> Dataset Overview</h2>
+                        <button class="btn btn-success" onclick="downloadData()">
+                            <i class="fas fa-download"></i> Download CSV
+                        </button>
+                    </div>
+                    <div id="overviewData" class="card-body"></div>
+                </div>
+            </div>
+
+            <!-- Data Cleaning Tab -->
+            <div id="clean" class="tab-content">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-broom"></i> Data Cleaning & Transformation</h2>
+                    </div>
+                    <div class="card-body">
+                        
+                        <div class="section">
+                            <h3><i class="fas fa-trash"></i> Drop Columns</h3>
+                            <select id="dropColumns" multiple class="form-control"></select>
+                            <button class="btn btn-danger" onclick="dropColumns()">
+                                <i class="fas fa-trash-alt"></i> Drop Selected
+                            </button>
+                        </div>
+
+                        <div class="section">
+                            <h3><i class="fas fa-fill-drip"></i> Fill Missing Values</h3>
+                            <div class="form-row">
+                                <select id="fillColumn" class="form-control"></select>
+                                <select id="fillMethod" class="form-control">
+                                    <option value="mean">Mean</option>
+                                    <option value="median">Median</option>
+                                    <option value="mode">Mode</option>
+                                    <option value="forward">Forward Fill</option>
+                                    <option value="backward">Backward Fill</option>
+                                    <option value="custom">Custom Value</option>
+                                    <option value="drop">Drop Rows</option>
+                                </select>
+                                <input type="text" id="customValue" class="form-control" placeholder="Custom value" style="display:none;">
+                                <button class="btn btn-primary" onclick="fillMissing()">
+                                    <i class="fas fa-check"></i> Apply
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="section">
+                            <h3><i class="fas fa-copy"></i> Remove Duplicates</h3>
+                            <div class="form-row">
+                                <label>
+                                    <span>Select Columns (Leave empty for all columns):</span>
+                                    <select id="duplicateColumns" multiple class="form-control"></select>
+                                </label>
+                            </div>
+                            <button class="btn btn-warning" onclick="removeDuplicates()">
+                                <i class="fas fa-eraser"></i> Remove Duplicate Rows
+                            </button>
+                        </div>
+
+                        <div class="section">
+                            <h3><i class="fas fa-chart-line"></i> Remove Outliers</h3>
+                            <select id="outlierColumn" class="form-control"></select>
+                            <button class="btn btn-warning" onclick="removeOutliers()">
+                                <i class="fas fa-filter"></i> Remove Outliers (IQR Method)
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analysis Tab -->
+            <div id="analysis" class="tab-content">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-chart-bar"></i> Statistical Analysis</h2>
+                    </div>
+                    <div class="card-body">
+                        
+                        <div class="section">
+                            <h3><i class="fas fa-calculator"></i> Descriptive Statistics</h3>
+                            <button class="btn btn-primary" onclick="showStatistics()">
+                                <i class="fas fa-table"></i> Generate Statistics
+                            </button>
+                            <div id="statisticsData" class="result-area"></div>
+                        </div>
+
+                        <div class="section">
+                            <h3><i class="fas fa-link"></i> Correlation Matrix</h3>
+                            <select id="corrMethod" class="form-control">
+                                <option value="pearson">Pearson</option>
+                                <option value="kendall">Kendall</option>
+                                <option value="spearman">Spearman</option>
+                            </select>
+                            <button class="btn btn-primary" onclick="showCorrelation()">
+                                <i class="fas fa-chart-area"></i> Generate Heatmap
+                            </button>
+                            <div id="correlationPlot" class="result-area"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visualizations Tab -->
+            <div id="visuals" class="tab-content">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-chart-pie"></i> Data Visualizations</h2>
+                    </div>
+                    <div class="card-body">
+                        
+                        <div class="section">
+                            <h3><i class="fas fa-palette"></i> Plot Generator</h3>
+                            <div class="form-row">
+                                <select id="plotType" class="form-control" onchange="updatePlotOptions()">
+                                    <option value="histogram">Histogram</option>
+                                    <option value="boxplot">Box Plot</option>
+                                    <option value="scatter">Scatter Plot</option>
+                                    <option value="bar">Bar Chart</option>
+                                    <option value="line">Line Plot</option>
+                                    <option value="distribution">Distribution Analysis</option>
+                                </select>
+                            </div>
+                            <div id="plotOptions" class="form-row"></div>
+                            <button class="btn btn-primary" onclick="generatePlot()">
+                                <i class="fas fa-chart-line"></i> Generate Plot
+                            </button>
+                            <div id="plotArea" class="result-area"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 CSV Data Analyzer | B.Tech Final Year Project | Advanced Data Science Platform</p>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

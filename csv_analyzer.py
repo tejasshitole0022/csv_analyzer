@@ -439,8 +439,10 @@ if uploaded_file:
                     # Top contributors
                     st.write("**Top 3 Contributors per Component:**")
                     for i in range(min(3, n_components)):
-                        top_features = loadings[f'PC{i+1}'].abs().nlargest(3)
-                        st.write(f"**PC{i+1}:** {', '.join([f'{feat} ({loadings.loc[feat, f"PC{i+1}"]:.2f})' for feat in top_features.index])}")
+                        pc_col = f'PC{i+1}'
+                        top_features = loadings[pc_col].abs().nlargest(3)
+                        contributors = ', '.join([f'{feat} ({loadings.loc[feat, pc_col]:.2f})' for feat in top_features.index])
+                        st.write(f"**{pc_col}:** {contributors}")
                 
                 # Download transformed data
                 st.download_button(
