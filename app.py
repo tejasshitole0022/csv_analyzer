@@ -477,7 +477,7 @@ def reset():
 
 if __name__ == '__main__':
     print("=" * 60)
-    print("CSV DATA ANALYZER - B.Tech Final Year Project")
+    print("CSV DATA ANALYZER - B.Tech Project")
     print("=" * 60)
     print("Server starting on http://localhost:5000")
     print("Press CTRL+C to quit")

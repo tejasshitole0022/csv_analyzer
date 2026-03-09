@@ -1,4 +1,4 @@
-# CSV Data Analyzer - B.Tech Final Year Project
+# CSV Data Analyzer 
 
 ## 🎓 Project Overview
 Advanced web-based CSV data analysis platform with statistical analysis, data cleaning, visualization, and PCA capabilities.
